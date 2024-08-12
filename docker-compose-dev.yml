@@ -1,7 +1,7 @@
 services:
   backend:
     container_name: backend
-    command: fastapi dev main_api.py
+    command: fastapi dev app.py
     build: ./backend
     image: backend
 
