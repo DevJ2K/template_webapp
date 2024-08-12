@@ -1,0 +1,22 @@
+services:
+  backend:
+    container_name: backend
+    command: fastapi dev main_api.py
+    build: ./backend
+    image: backend
+
+    ports:
+      - 3000:3000
+
+  frontend:
+    container_name: frontend
+    command: npm run dev
+    build: ./frontend
+    image: frontend
+
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3000
+
+    depends_on:
+      - backend
