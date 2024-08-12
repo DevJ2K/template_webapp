@@ -1,5 +1,4 @@
-all:
-	echo Call all.
+
 
 # init:
 # 	pip install --upgrade pip
@@ -8,5 +7,3 @@ all:
 # 	source env/bin/activate
 # 	pip install requirements.txt
 # 	pip install "fastapi[standard]"
-
-.PHONY: all
