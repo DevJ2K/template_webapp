@@ -13,19 +13,8 @@ const router = createRouter({
       }
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    },
-    {
       path: '/test',
       name: 'test',
-      // route level code-splitting
-      // this generates a separate chunk (test.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/TestView.vue')
     },
     {
@@ -44,7 +33,6 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   if (to.meta.title && typeof to.meta.title === "string") {
     document.title = to.meta.title;
-
   }
   next();
 })

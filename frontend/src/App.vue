@@ -2,7 +2,7 @@
 
   <NavigationBar/>
   <div class="h-24"></div>
-  <div>
+  <div class="relative flex size-full flex-col items-center">
     <RouterView/>
   </div>
 </template>

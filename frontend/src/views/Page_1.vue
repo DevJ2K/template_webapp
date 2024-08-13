@@ -1,5 +1,5 @@
 <template>
-  <main class="bg-app-bg h-full">
+  <main class="">
     <h1>Page 1</h1>
     <!-- <TheWelcome /> -->
   </main>
