@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import TheWelcome from "../components/TheWelcome.vue";
 const makeRequests = async () => {
   console.log("Yo !");
   const url = "http://127.0.0.1:8000/test";

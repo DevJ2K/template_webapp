@@ -1,6 +1,6 @@
 <template>
   <main class="bg-app-bg h-full">
-    <h1>Home Page</h1>
+    <h1>Page 2</h1>
     <!-- <TheWelcome /> -->
   </main>
 </template>
