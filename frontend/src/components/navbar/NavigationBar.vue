@@ -27,18 +27,25 @@
 						<span class="animate-underline"></span>
 
 					</li>
+					<button
+							class="group flex flex-row items-center gap-1.5 rounded-full border-2 border-accent-color px-6 py-2 text-high-contrast-text transition-colors hover:bg-accent-color dark:text-d-high-contrast-text">
+							<DownloadSvg svg-class="text-high-contrast-text size-5 group-hover:text-white transition-colors"/>
+							<span class=" font-semibold transition-colors group-hover:text-white">Download</span>
+					</button>
 				</ul>
 			</div>
 
-			<div class=" container flex items-center md:justify-center">
-				<!-- <p @click="routerTo('/')" class=" flex cursor-pointer flex-row items-center gap-4">
-				<div class=" size-16 overflow-hidden rounded-full border-2 bg-blue-400">
-					<img src="../../assets/images/j2klogo.png" alt="" class=" size-full object-cover">
+			<div class=" container flex items-center justify-between md:justify-center">
+				<div class="flex w-1/3 justify-start">
+					<div @click="routerTo('/')" class=" flex cursor-pointer flex-row items-center gap-4">
+						<div class=" size-16 overflow-hidden rounded-full border-2 bg-blue-50">
+							<img src="../../assets/images/j2klogo.png" alt="" class=" size-full object-cover">
+						</div>
+						<h1 id="devj2kText" class="text-outline text-2xl font-black text-transparent">DevJ2K</h1>
+					</div>
 				</div>
-				<h1 id="devj2kText" class="text-outline text-2xl font-black text-transparent">DevJ2K</h1>
-				</p> -->
 				<ul
-					class=" flex flex-row items-center justify-center gap-8 text-lg font-semibold text-high-contrast-text dark:text-d-high-contrast-text max-md:hidden">
+					class=" flex w-1/3 flex-row items-center justify-center gap-8 text-lg font-semibold text-high-contrast-text dark:text-d-high-contrast-text max-md:hidden">
 					<li class="group relative w-max">
 						<p @click="routerTo('/')"
 							class="cursor-pointer transition-all group-hover:text-black dark:group-hover:text-white">
@@ -61,6 +68,14 @@
 
 					</li>
 				</ul>
+				<div class=" flex w-1/3 justify-end max-md:hidden">
+					<button
+						class="group flex flex-row items-center gap-1.5 rounded-full border-2 border-accent-color px-6 py-2 text-high-contrast-text transition-colors hover:bg-accent-color dark:text-d-high-contrast-text">
+						<DownloadSvg svg-class="text-high-contrast-text size-5 group-hover:text-white transition-colors"/>
+						<span class=" font-semibold transition-colors group-hover:text-white">Download</span>
+					</button>
+				</div>
+
 				<div class="z-[1] size-fit cursor-pointer md:hidden" @click="toggleMenu">
 					<NavHamburger />
 				</div>
@@ -74,6 +89,7 @@
 import { ref } from 'vue';
 import NavHamburger from '../NavHamburger.vue';
 import { useRouter } from 'vue-router';
+import DownloadSvg from '../svg/DownloadSvg.vue';
 
 const displayMenu = ref(false);
 const router = useRouter();
