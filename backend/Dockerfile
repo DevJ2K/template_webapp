@@ -10,6 +10,6 @@ RUN apt-get -y update && apt-get -y upgrade && apt-get -y install python3 pip
 RUN pip install -r /home/backend/requirements.txt --break-system-packages
 WORKDIR /home/backend
 
-EXPOSE 8000
+EXPOSE 4000
 
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "4000"]
