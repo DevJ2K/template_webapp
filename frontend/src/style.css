@@ -44,4 +44,12 @@
 	-webkit-text-stroke-color: #fff;
 }
 
+.form-input {
+	@apply block w-full rounded-md border bg-ui-bg p-2 text-sm text-high-contrast-text outline-none  focus:bg-active-ui-bg dark:bg-d-ui-bg dark:text-d-high-contrast-text dark:focus:bg-d-active-ui-bg;
+}
+
+.form-input-border {
+	@apply border-ui-border hover:border-hover-ui-border  focus:border-accent-color dark:border-d-ui-border dark:hover:border-d-hover-ui-border dark:focus:border-d-accent-color;
+}
+
 @tailwind utilities;

@@ -1,8 +1,8 @@
 <template>
 
   <NavigationBar/>
-  <div class="h-24"></div>
-  <div class="relative flex size-full flex-col items-center">
+  <div class="relative flex size-full min-h-screen flex-col items-center">
+    <div class="h-24"></div>
     <RouterView/>
   </div>
 </template>
