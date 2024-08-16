@@ -5,6 +5,8 @@ DOCKER_FILE_HOT_RELOAD = dc-hot-reload.yml
 DOCKER_FILE_LOCAL = docker-compose-local.yml
 DOCKER_FILE_PROD = docker-compose-prod.yml
 
+DOCKER_FILE = $(DOCKER_FILE_HOT_RELOAD)
+
 BACKEND_SERVICE = api
 FRONTEND_SERVICE = nuxt
 DATABASE_SERVICE = postgres
@@ -34,17 +36,17 @@ help:
 # Build Docker images
 build:
 	@echo "Building Docker images..."
-	@docker-compose -f docker-compose.dev.yml build
+	@docker-compose -f $(DOCKER_FILE) build
 
 # Start Docker containers
 up: build
 	@echo "Starting Docker containers..."
-	@docker-compose -f docker-compose.dev.yml up -d
+	@docker-compose -f $(DOCKER_FILE) up -d
 
 # Stop Docker containers
 down:
 	@echo "Stopping Docker containers..."
-	@docker-compose -f docker-compose.dev.yml down
+	@docker-compose -f $(DOCKER_FILE) down
 
 # Restart Docker containers
 restart: down up
@@ -52,11 +54,11 @@ restart: down up
 # View Docker logs
 logs:
 	@echo "Viewing logs for services..."
-	@docker-compose -f docker-compose.dev.yml logs -f
+	@docker-compose -f $(DOCKER_FILE) logs -f
 
 # Clean Docker resources
 clean:
 	@echo "Removing Docker containers, networks, images, and volumes..."
-	@docker-compose -f docker-compose.dev.yml down --rmi all --volumes --remove-orphans
+	@docker-compose -f $(DOCKER_FILE) down --rmi all --volumes --remove-orphans
 
 .PHONY: help build up down restart logs clean
