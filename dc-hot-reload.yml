@@ -9,18 +9,20 @@ services:
 
   frontend:
     container_name: frontend
+
+    build: ./frontend/app
     command: npm run dev
-    build: ./frontend
 
     volumes:
       - ./frontend:/home
+      - /app/node_modules
 
     ports:
-      -"4001:4001"
+      -"4001:4000"
 
     environment:
       - HOST=0.0.0.0
-      - PORT=4001
+      - PORT=4000
 
     depends_on:
       - backend
