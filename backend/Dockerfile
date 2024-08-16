@@ -1,14 +1,12 @@
-FROM debian:latest
+FROM python:3.10
 
-RUN mkdir -p /home/backend/project_name
+WORKDIR /app
 
-COPY app.py /home/backend
-COPY requirements.txt /home/backend
-COPY project_name /home/backend/project_name
+COPY app.py ./
+COPY requirements.txt ./
+COPY project_name ./project_name
 
-RUN apt-get -y update && apt-get -y upgrade && apt-get -y install python3 pip
-RUN pip install -r /home/backend/requirements.txt --break-system-packages
-WORKDIR /home/backend
+RUN pip install -r requirements.txt
 
 EXPOSE 4000
 
