@@ -1,19 +1,26 @@
-# init:
-# 	pip install --upgrade pip
-# 	pip install virtualenv
-# 	python3.12 -m venv env
-# 	source env/bin/activate
-# 	pip install requirements.txt
-# 	pip install "fastapi[standard]"
-
-
 # Define variables
 DOCKER_COMPOSE = docker-compose -f docker-compose.dev.yml
+
+DOCKER_FILE_HOT_RELOAD = dc-hot-reload.yml
+DOCKER_FILE_LOCAL = docker-compose-local.yml
+DOCKER_FILE_PROD = docker-compose-prod.yml
+
 BACKEND_SERVICE = api
 FRONTEND_SERVICE = nuxt
 DATABASE_SERVICE = postgres
 
-.PHONY: help build up down restart logs clean
+########################################
+########## COLORS
+DEF_COLOR = \033[0;39m
+GRAY = \033[1;90m
+RED = \033[1;91m
+GREEN = \033[1;92m
+YELLOW = \033[1;93m
+BLUE = \033[1;94m
+MAGENTA = \033[1;95m
+CYAN = \033[1;96m
+WHITE = \033[1;97m
+
 
 # Default target
 help:
@@ -51,3 +58,5 @@ logs:
 clean:
 	@echo "Removing Docker containers, networks, images, and volumes..."
 	@docker-compose -f docker-compose.dev.yml down --rmi all --volumes --remove-orphans
+
+.PHONY: help build up down restart logs clean
