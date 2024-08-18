@@ -60,5 +60,7 @@ logs:
 clean:
 	@echo "Removing Docker containers, networks, images, and volumes..."
 	@docker-compose -f $(DOCKER_FILE) down --rmi all --volumes --remove-orphans
+	# docker rmi -f $(docker images -qa)
+	# docker rm -v -f $(docker ps -qa)
 
 .PHONY: help build up down restart logs clean
