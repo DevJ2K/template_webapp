@@ -15,7 +15,11 @@ services:
       - ./backend:/app
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      args:
+        - HOST=0.0.0.0
+        - PORT=4000
     # command: npm run dev
     volumes:
       - ./frontend/app:/app
@@ -23,10 +27,6 @@ services:
 
     ports:
       - 4001:4000
-
-    environment:
-      - HOST=0.0.0.0
-      - PORT=4000
 
     depends_on:
       - backend
