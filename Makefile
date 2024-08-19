@@ -26,35 +26,35 @@ WHITE = \033[1;97m
 
 # Default target
 help:
-	@echo "  all         - Build Docker images and Start Docker containers"
-	@echo "  build       - Build Docker images"
-	@echo "  up          - Start Docker containers"
-	@echo "  down        - Stop Docker containers"
-	@echo "  restart     - Restart Docker containers"
-	@echo "  logs        - View Docker logs"
-	@echo "  clean       - Remove Docker containers, networks, images, and volumes"
+	@echo "$(MAGENTA)→$(WHITE) $(GREEN)run         $(BLUE)-$(WHITE) Build Docker images and Start Docker containers"
+	@echo ""
+	@echo "$(MAGENTA)→$(WHITE) build       $(BLUE)-$(WHITE) Build Docker images"
+	@echo "$(MAGENTA)→$(WHITE) up          $(BLUE)-$(WHITE) Start Docker containers"
+	@echo "$(MAGENTA)→$(WHITE) down        $(BLUE)-$(WHITE) Stop Docker containers"
+	@echo "$(MAGENTA)→$(WHITE) restart     $(BLUE)-$(WHITE) Restart Docker containers"
+	@echo "$(MAGENTA)→$(WHITE) logs        $(BLUE)-$(WHITE) View Docker logs"
+	@echo "$(MAGENTA)→$(WHITE) clean       $(BLUE)-$(WHITE) Remove Docker containers, networks, images, and volumes$(RESET)"
 
-all: up
+run: build up
+
+# Build Docker images
+build:
+	@echo "$(BLUE)Building Docker images...$(RESET)"
+	@docker-compose -f $(DOCKER_FILE) build
+
+# Start Docker containers
+up:
+	@echo "$(YELLOW)Starting Docker containers...$(RESET)"
+	@docker-compose -f $(DOCKER_FILE) up -d
 	@clear
 	@while [ $$(docker-compose -f $(DOCKER_FILE) logs signature --no-log-prefix | wc -l) -eq 0 ]; do \
 		sleep 0.1; \
 	done
 	@docker-compose -f $(DOCKER_FILE) logs signature --no-log-prefix
 
-# Build Docker images
-build:
-	@echo "Building Docker images..."
-	@docker-compose -f $(DOCKER_FILE) build
-
-# Start Docker containers
-up: build
-	@echo "Starting Docker containers..."
-	@docker-compose -f $(DOCKER_FILE) up -d
-	@docker-compose -f $(DOCKER_FILE) logs signature --no-log-prefix
-
 # Stop Docker containers
 down:
-	@echo "Stopping Docker containers..."
+	@echo "$(RED)Stopping Docker containers...$(RESET)"
 	@docker-compose -f $(DOCKER_FILE) down
 
 # Restart Docker containers
@@ -62,12 +62,12 @@ restart: down up
 
 # View Docker logs
 logs:
-	@echo "Viewing logs for services..."
+	@echo "$(GRAY)Viewing logs for services...$(RESET)"
 	@docker-compose -f $(DOCKER_FILE) logs -f
 
 # Clean Docker resources
 clean:
-	@echo "Removing Docker containers, networks, images, and volumes..."
+	@echo "$(RED)Removing Docker containers, networks, images, and volumes...$(RESET)"
 	@docker-compose -f $(DOCKER_FILE) down --rmi all --volumes --remove-orphans
 # docker rmi -f $(docker images -qa)
 # docker rm -v -f $(docker ps -qa)
