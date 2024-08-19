@@ -30,3 +30,11 @@ services:
 
     depends_on:
       - backend
+
+  signature:
+    build:
+      context: ./signature
+      args:
+        - PORT=4001
+    depends_on:
+      - frontend

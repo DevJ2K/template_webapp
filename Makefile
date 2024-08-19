@@ -26,12 +26,20 @@ WHITE = \033[1;97m
 
 # Default target
 help:
+	@echo "  all         - Build Docker images and Start Docker containers"
 	@echo "  build       - Build Docker images"
 	@echo "  up          - Start Docker containers"
 	@echo "  down        - Stop Docker containers"
 	@echo "  restart     - Restart Docker containers"
 	@echo "  logs        - View Docker logs"
 	@echo "  clean       - Remove Docker containers, networks, images, and volumes"
+
+all: up
+	@clear
+	@while [ $$(docker-compose -f $(DOCKER_FILE) logs signature --no-log-prefix | wc -l) -eq 0 ]; do \
+		sleep 0.1; \
+	done
+	@docker-compose -f $(DOCKER_FILE) logs signature --no-log-prefix
 
 # Build Docker images
 build:
@@ -42,6 +50,7 @@ build:
 up: build
 	@echo "Starting Docker containers..."
 	@docker-compose -f $(DOCKER_FILE) up -d
+	@docker-compose -f $(DOCKER_FILE) logs signature --no-log-prefix
 
 # Stop Docker containers
 down:
@@ -60,7 +69,7 @@ logs:
 clean:
 	@echo "Removing Docker containers, networks, images, and volumes..."
 	@docker-compose -f $(DOCKER_FILE) down --rmi all --volumes --remove-orphans
-	# docker rmi -f $(docker images -qa)
-	# docker rm -v -f $(docker ps -qa)
+# docker rmi -f $(docker images -qa)
+# docker rm -v -f $(docker ps -qa)
 
 .PHONY: help build up down restart logs clean
