@@ -1,15 +1,10 @@
 # Define variables
-DOCKER_COMPOSE = docker-compose -f docker-compose.dev.yml
 
 DOCKER_FILE_HOT_RELOAD = dc-hot-reload.yml
 DOCKER_FILE_LOCAL = docker-compose-local.yml
 DOCKER_FILE_PROD = docker-compose-prod.yml
 
 DOCKER_FILE = $(DOCKER_FILE_HOT_RELOAD)
-
-BACKEND_SERVICE = api
-FRONTEND_SERVICE = nuxt
-DATABASE_SERVICE = postgres
 
 ########################################
 ########## COLORS
