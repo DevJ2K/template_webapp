@@ -1,4 +1,5 @@
 # template_webapp
+ <img src="/gitimages/miniature.png" width="100%">
 My template for my webapp. I use Python in Backend + Vue.js in Frontend.
 
 ## Overview
