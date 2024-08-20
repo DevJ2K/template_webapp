@@ -1,47 +1,49 @@
-# template_webapp
- <img src="/gitimages/miniature.png" width="100%">
-My template for my webapp. I use Python in Backend + Vue.js in Frontend.
+# Template WebApp
+
+<img src="/gitimages/miniature.png" alt="Project Overview" width="100%">
 
 ## Overview
 
-# Try the project
+Welcome to my development template for running a Python project as a web application. This template combines a Python backend with a Vue.js frontend, providing a solid foundation to kickstart your projects.
 
-## Using Webapp
+## Try the Project
 
 ### 1. Install Docker
 
-To run the project, you'll first need to install [Docker](https://docs.docker.com/engine/install/) on your computer.
+To run this project, the first step is to install [Docker](https://docs.docker.com/engine/install/) on your machine. Docker simplifies deployment by providing an isolated environment for your application.
 
 ### 2. Install Make (Optional)
 
-The project use a Makefile to run the docker and avoid you to type manually the command. You can follow this [link](https://www.gnu.org/software/make/#download) to install `make` or search by yourself. But is optional.
+This project includes a Makefile, which allows you to execute Docker commands more easily, without having to type them manually. While using `make` is optional, it is highly recommended to simplify operations. You can install `make` by following [this link](https://www.gnu.org/software/make/#download) or by searching for installation instructions specific to your system.
 
-### 3. Run the webapp
+### 3. Run the WebApp
+
 #### With Make
-Run this command in your terminal :
-```
+
+Run this command in your terminal:
+
+```bash
 make
 ```
-Will display this :
+This will display:
 
 <img src="/gitimages/make_output.png" width="75%">
-
-Run this to run the webapp :
-```
+Next, run this to start the web application:
+```bash
 make run
 ```
-
 #### Without Make
-Run this command to run the webapp :
-```
+
+If you prefer not to use `make`, you can start the web application by running the following command:
+
+```bash
 docker-compose -f docker-compose.yml build
 ```
+### Project Only
 
-## Project only
-### 1. Go in project folder
-You can use this [link](https://github.com/DevJ2K/template_webapp/tree/main/backend/project_name)
+**Navigate to the Project Folder**
 
-
+You can access the project folder by using [this link](https://github.com/DevJ2K/template_webapp/tree/main/backend/project_name).
 
 <!-- ## Todo-list
 - [ ] Update current and project README.md.
