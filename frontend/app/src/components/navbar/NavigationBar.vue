@@ -4,7 +4,7 @@
 			<div id="navMenu"
 				class="absolute top-0 h-screen w-full -translate-x-full transition-transform duration-500 md:hidden">
 				<ul
-					class=" flex size-full flex-col items-center justify-center gap-14 bg-app-bg py-4 text-xl font-semibold text-high-contrast-text dark:bg-d-app-bg dark:text-d-high-contrast-text">
+					class=" bg-app-bg text-high-contrast-text dark:bg-d-app-bg dark:text-d-high-contrast-text flex size-full flex-col items-center justify-center gap-14 py-4 text-xl font-semibold">
 
 					<li class="group relative w-max">
 						<p @click="routerTo('/')"
@@ -27,11 +27,11 @@
 						<span class="animate-underline"></span>
 
 					</li>
-					<button
-							class="group flex flex-row items-center gap-1.5 rounded-full border-2 border-accent-color px-6 py-2 text-high-contrast-text transition-colors hover:bg-accent-color dark:text-d-high-contrast-text">
+					<a :href="downloadLink" target="_blank"
+							class="border-accent-color text-high-contrast-text hover:bg-accent-color dark:text-d-high-contrast-text group flex flex-row items-center gap-1.5 rounded-full border-2 px-6 py-2 transition-colors">
 							<DownloadSvg svg-class="text-high-contrast-text size-5 group-hover:text-white transition-colors"/>
 							<span class=" font-semibold transition-colors group-hover:text-white">Download</span>
-					</button>
+					</a>
 				</ul>
 			</div>
 
@@ -45,7 +45,7 @@
 					</div>
 				</div>
 				<ul
-					class=" flex w-1/3 flex-row items-center justify-center gap-8 text-lg font-semibold text-high-contrast-text dark:text-d-high-contrast-text max-md:hidden">
+					class=" text-high-contrast-text dark:text-d-high-contrast-text flex w-1/3 flex-row items-center justify-center gap-8 text-lg font-semibold max-md:hidden">
 					<li class="group relative w-max">
 						<p @click="routerTo('/')"
 							class="cursor-pointer transition-all group-hover:text-black dark:group-hover:text-white">
@@ -69,11 +69,11 @@
 					</li>
 				</ul>
 				<div class=" flex w-1/3 justify-end max-md:hidden">
-					<button
-						class="group flex flex-row items-center gap-1.5 rounded-full border-2 border-accent-color px-6 py-2 text-high-contrast-text transition-colors hover:bg-accent-color dark:text-d-high-contrast-text">
+					<a :href="downloadLink" target="_blank"
+						class="border-accent-color text-high-contrast-text hover:bg-accent-color dark:text-d-high-contrast-text group flex flex-row items-center gap-1.5 rounded-full border-2 px-6 py-2 transition-colors">
 						<DownloadSvg svg-class="text-high-contrast-text size-5 group-hover:text-white transition-colors"/>
 						<span class=" font-semibold transition-colors group-hover:text-white">Download</span>
-					</button>
+					</a>
 				</div>
 
 				<div class="z-[1] size-fit cursor-pointer md:hidden" @click="toggleMenu">
@@ -93,6 +93,7 @@ import DownloadSvg from '../svg/DownloadSvg.vue';
 
 const displayMenu = ref(false);
 const router = useRouter();
+const downloadLink = downloadProject;
 
 const toggleMenu = () => {
 

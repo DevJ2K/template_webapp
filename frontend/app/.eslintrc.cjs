@@ -9,6 +9,9 @@ module.exports = {
     '@vue/eslint-config-typescript',
     'plugin:tailwindcss/recommended'
   ],
+  rules: {
+    'tailwindcss/no-custom-classname': 'off',
+  },
   parserOptions: {
     ecmaVersion: 'latest'
   }
