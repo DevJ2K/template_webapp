@@ -6,7 +6,7 @@
 
 Welcome to my development template for running a Python project as a web application. This template combines a Python backend with a Vue.js frontend, providing a solid foundation to kickstart your projects.
 
-## Try the Project
+## Try the Project - WebApp
 
 ### 1. Install Docker
 
@@ -29,6 +29,7 @@ This will display:
 
 <img src="/gitimages/make_output.png" width="75%">
 Next, run this to start the web application:
+
 ```bash
 make run
 ```
@@ -39,7 +40,7 @@ If you prefer not to use `make`, you can start the web application by running th
 ```bash
 docker-compose -f docker-compose.yml build
 ```
-### Project Only
+## Try the Project - Script Only
 
 **Navigate to the Project Folder**
 
