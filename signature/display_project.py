@@ -11,6 +11,7 @@ BHRED = "\033[1;31m"
 BHORANGE = "\033[1;91m"
 BHGRAY = "\033[1;90m"
 BHBRIGHTBLUE = "\033[1;94m"
+BHBRIGHTCYAN = "\033[1;36m"
 BHBRIGHTGREEN = "\033[1;92m"
 BHBRIGHTYELLOW = "\033[1;93m"
 BHBRIGHTMAGENTA = "\033[1;95m"
@@ -29,13 +30,13 @@ def display_project():
 					print(f"{BHCYAN} {RESET}", end="")
 				elif (char == "^"):
 					toggle = True
-					print(f"{BHBRIGHTBLUE}", end="")
+					print(f"{BHBRIGHTCYAN}", end="")
 				elif (char == "¡"):
 					toggle = True
 					print(f"{BHGREEN}", end="")
 				elif (char == "†"):
 					toggle = True
-					print(f" {UNDERLINE}", end="")
+					print(f"{UNDERLINE}", end="")
 				elif (char == "‡"):
 					toggle = True
 					print(f"{BHBRIGHTYELLOW}", end="")
