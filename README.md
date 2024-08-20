@@ -13,7 +13,7 @@ To run the project, you'll first need to install [Docker](https://docs.docker.co
 
 The project use a Makefile to run the docker and avoid you to type manually the command. You can follow this [link](https://www.gnu.org/software/make/#download) to install `make` or search by yourself. But is optional.
 
-### 2. Run the webapp
+### 3. Run the webapp
 #### With Make
 Run this command in your terminal :
 ```
@@ -23,9 +23,16 @@ Will display this :
 
 <img src="/gitimages/make_output.png" width="75%">
 
+Run this to run the webapp :
+```
+make run
+```
 
 #### Without Make
-
+Run this command to run the webapp :
+```
+docker-compose -f docker-compose.yml build
+```
 
 ## Project only
 
