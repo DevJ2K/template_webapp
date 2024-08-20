@@ -2,7 +2,7 @@
 
 DOCKER_FILE_HOT_RELOAD = dc-hot-reload.yml
 DOCKER_FILE_LOCAL = docker-compose-local.yml
-DOCKER_FILE_PROD = docker-compose-prod.yml
+DOCKER_FILE_PROD = docker-compose.yml
 
 DOCKER_FILE = $(DOCKER_FILE_HOT_RELOAD)
 
