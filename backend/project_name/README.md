@@ -47,7 +47,7 @@ You can run the script in one of the following ways:
 
 1. **Make the script executable:**
 
-    ```bash
+   ```bash
     chmod +x main.py
     ```
 
@@ -58,12 +58,6 @@ You can run the script in one of the following ways:
     ```
 
 2. **Using the Python command:**
-
-    ```bash
-    python main.py
-    ```
-
-    Or
 
     ```bash
     python3 main.py
