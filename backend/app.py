@@ -1,7 +1,11 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+import sys
+import os
 
+# Import my package
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'project_name')))
 
 
 class Item(BaseModel):
